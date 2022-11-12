@@ -28,8 +28,7 @@ const authSlice = createSlice({
       state.token = null;
       state.isLoggedIn = false;
     },
-    [authOperations.fetchCurrentUser.pending](state, action) {
-      state.user = action.payload;
+    [authOperations.fetchCurrentUser.pending](state) {
       state.isFetchingCurrentUser = true;
     },
     [authOperations.fetchCurrentUser.fulfilled](state, action) {
@@ -38,7 +37,6 @@ const authSlice = createSlice({
       state.isFetchingCurrentUser = false;
     },
     [authOperations.fetchCurrentUser.rejected](state) {
-      state.isLoggedIn = false;
       state.isFetchingCurrentUser = false;
     },
   },

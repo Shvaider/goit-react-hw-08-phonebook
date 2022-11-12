@@ -33,7 +33,7 @@ export default function RegistrationView() {
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces."
-            placeholder="Evhenii"
+            placeholder="Example John"
             required
             value={name}
             onChange={handleChange}
@@ -47,7 +47,7 @@ export default function RegistrationView() {
             name="email"
             pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             title="Enter your email"
-            placeholder="user@mail.com"
+            placeholder="Example user@mail.com"
             required
             value={email}
             onChange={handleChange}

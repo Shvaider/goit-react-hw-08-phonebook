@@ -33,7 +33,7 @@ export default function LoginView() {
             name="email"
             pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             title="Enter your email"
-            placeholder="user@mail.com"
+            placeholder="Example user@mail.com"
             required
             value={email}
             onChange={handleChange}

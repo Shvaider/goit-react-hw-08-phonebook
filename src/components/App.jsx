@@ -7,10 +7,10 @@ import { authOperations, authSelectors } from 'redux/auth';
 import Loader from './Loader';
 import AppBar from './AppBar';
 
-const HomeView = lazy(() => import('../views/HomeView/HomeView'));
-const RegistrationView = lazy(() => import('../views/RegistrationView/RegisterView'));
-const LoginView = lazy(() => import('../views/LoginView/LoginView'));
-const ContactsView = lazy(() => import('../views/ContactsView'));
+const HomeView = lazy(() => import('views/HomeView'));
+const RegistrationView = lazy(() => import('views/RegistrationView'));
+const LoginView = lazy(() => import('views/LoginView'));
+const ContactsView = lazy(() => import('views/ContactsView'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -18,9 +18,10 @@ export const App = () => {
     authSelectors.isFetchingCurrentUser
   );
 
+  const token = useSelector((state) => state.auth.token);
   useEffect(() => {
-    dispatch(authOperations.fetchCurrentUser());
-  }, [dispatch]);
+    token && dispatch(authOperations.fetchCurrentUser());
+  }, [token]);
 
   return (
     <>
